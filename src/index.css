@@ -11,3 +11,29 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.tareas-container {
+  width: 80%;
+}
+
+input[type="text"] {
+  padding: 20px;
+  width: 50%;
+}
+
+input[type="submit"] {
+  padding: 22px;
+  width: 15%;
+  background-color: green;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+input[type="submit"]:hover {
+  opacity: 1;
+}
