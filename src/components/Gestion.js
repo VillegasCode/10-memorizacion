@@ -4,6 +4,7 @@ import { Empleados } from './Empleados'
 export const Gestion = () => {
 
 const [ nombre, setNombre ] = useState("");
+const [ pagina, setPagina ] = useState(1);
 
 // Trabajando con el Hook useRef
 // const gestorInput = useRef();
@@ -14,6 +15,8 @@ const asignarGestor = e => {
     setNombre(e.target.value);
 }
 
+console.log("Vista actualizada!!");
+
   return (
     <div>
         <h1>Nombre del Gestor: {nombre}</h1>
@@ -23,8 +26,10 @@ const asignarGestor = e => {
         <h2>Listado de empleados:</h2>
 
         <p>Los usuarios son gestionados por {nombre} vienen de JSON placeholder...</p>
+        <button onClick={() => { setPagina(1) }}>Página 1</button>
+        <button onClick={() => { setPagina(2) }}>Página 2</button>
 
-        <Empleados />
+        <Empleados pagina={pagina} />
     </div>
   )
 }
