@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-export const Empleados = 
+export const Empleados = React.memo(
 ({pagina = 1}) => {
   
     const [empleados, setEmpleados] = useState([]);
@@ -35,3 +35,4 @@ export const Empleados =
     </div>
   )
 }
+);
