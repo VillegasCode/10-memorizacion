@@ -7,7 +7,7 @@ export const Empleados =
 
     useEffect(() => {
         conseguirEmpleados(pagina);
-    }, []);
+    }, [pagina]);
 
     
     const conseguirEmpleados = async(page) => {
