@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 export const Empleados = React.memo(
-({pagina = 1}) => {
+({pagina}) => {
   
     const [empleados, setEmpleados] = useState([]);
 
@@ -20,7 +20,9 @@ export const Empleados = React.memo(
         console.log("Se ejecutó la petición Ajax")
     }
 
-    console.log("Se ha vuelto a renderizar empleados!!");
+    useEffect(() => {
+        console.log("Se ha vuelto a renderizar empleados!!");
+    }, [empleados]);
   
     return (
     <div>
