@@ -12,7 +12,7 @@ function App() {
           {/* Ejecicio con el hook useMemo */}
           <Tareas />
           
-          {/* Ejecicio con el método React.memo */}
+          {/* Ejecicio con el método React.memo para componentes */}
           {/* <Gestion /> */}
 
       </header>
