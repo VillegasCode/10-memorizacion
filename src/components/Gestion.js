@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Empleados } from './Empleados'
 
 export const Gestion = () => {
@@ -15,7 +15,9 @@ const asignarGestor = e => {
     setNombre(e.target.value);
 }
 
-console.log("Vista actualizada!!");
+useEffect(() => {
+    console.log("Vista actualizada!!");
+}, [nombre, pagina]);
 
   return (
     <div>
