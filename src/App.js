@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
-// import { Gestion } from './components/Gestion';
-import { Tareas } from './components/Tareas';
+import { Gestion } from './components/Gestion';
+// import { Tareas } from './components/Tareas';
 
 function App() {
   return (
@@ -10,10 +10,10 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
 
           {/* Ejecicio con el hook useMemo */}
-          <Tareas />
+          {/* <Tareas /> */}
           
           {/* Ejecicio con el método React.memo para componentes */}
-          {/* <Gestion /> */}
+          <Gestion />
 
       </header>
     </div>
