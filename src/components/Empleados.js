@@ -1,15 +1,11 @@
 import React, { useEffect, useState } from 'react'
 
 export const Empleados = React.memo(
-({pagina}) => {
+({pagina, mensaje}) => {
   
     const [empleados, setEmpleados] = useState([]);
 
-    useEffect(() => {
-        conseguirEmpleados(pagina);
-    }, [pagina]);
-
-    
+  
     const conseguirEmpleados = async(page) => {
         const url = "https://reqres.in/api/users?page=" + page;
         const peticion = await fetch(url);
@@ -17,12 +13,13 @@ export const Empleados = React.memo(
 
         setEmpleados(empleados);
 
-        console.log("Se ejecutó la petición Ajax")
+        console.log("Se ha vuelto a renderizar empleados")
     }
 
     useEffect(() => {
-        console.log("Se ha vuelto a renderizar empleados!!");
-    }, [empleados]);
+        conseguirEmpleados(pagina);
+        mensaje();
+    }, [pagina]);
   
     return (
     <div>
