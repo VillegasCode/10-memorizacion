@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { Empleados } from './Empleados'
 
 export const Gestion = () => {
@@ -10,7 +10,7 @@ const [ pagina, setPagina ] = useState(1);
 // const gestorInput = useRef();
 
 const asignarGestor = e => {
-    // Esto se usa si trabajamos con el hook useRef
+    // Esto se usa si trabajamos con el hook useRef,, previamente importar el useRef
     // setNombre(gestorInput.current.value);
     setNombre(e.target.value);
 }
@@ -18,6 +18,10 @@ const asignarGestor = e => {
 useEffect(() => {
     console.log("Vista actualizada!!");
 }, [nombre, pagina]);
+
+const mostrarMensaje = useCallback(() => {
+  console.log("Hola que tal soy un mensaje desde el componente Empleados");
+});
 
   return (
     <div>
@@ -31,7 +35,7 @@ useEffect(() => {
         <button onClick={() => { setPagina(1) }}>Página 1</button>
         <button onClick={() => { setPagina(2) }}>Página 2</button>
 
-        <Empleados pagina={pagina} />
+        <Empleados pagina={pagina} mensaje={mostrarMensaje} />
     </div>
   )
 }
